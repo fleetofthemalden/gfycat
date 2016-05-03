@@ -1,5 +1,4 @@
 // Dixon Minnick
-// Preliminary working version
 
 var loadingGifExternalUrl = 'https://i.imgur.com/seuaOqf.gif';
 
@@ -23,6 +22,8 @@ GfyCat.controller('GfyController', function ($scope, $http) {
 
    //Initialization
    $scope.gifs = [];
+   $scope.isLoading = true;
+   $scope.viewMobile = window.mobilecheck();
    var url = 'https://api.gfycat.com/v1test/gfycats/trending?count=20';
    var cursor = '';
    $http.get(url)
