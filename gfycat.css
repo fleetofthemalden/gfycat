@@ -1,0 +1,53 @@
+body {
+	padding: 30px;
+   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+   background-color: #666;
+   box-sizing: border-box;
+}
+
+.app {
+}
+
+.gfy-controller {
+	width: 680px;
+	padding: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #ccd;
+}
+
+.vid-container {
+	
+}
+
+.gfy-gif {
+	display: inline-block;
+	position: relative;
+	width: 156px;
+	height: 156px;
+	margin: 7px;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+video {
+	position: absolute;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+video.hidden {
+	display: none;
+}
+
+img {
+	position: absolute;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
+}
+
+img.hidden {
+	display: none;
+}

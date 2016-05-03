@@ -1,0 +1,31 @@
+<html>
+	<head>
+		<title>Gfy Gyfs</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="I made a gfycat thing with angular and an API" />
+		<meta name="keywords" content="gfycat trending gif gifs Dixon Minnick" />
+		<link rel="stylesheet" href="gfycat.css" />
+		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" type="image/vnd.microsoft.icon" />
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+		<script src="gfycat.js"></script>
+	</head>
+	<body>
+		<noscript>
+         <h1>¯\_(ツ)_/¯</h1>
+      </noscript>
+		<div class="app" ng-app="GfyCat">
+			<div class="gfy-controller" ng-controller="GfyController">
+				<div class="vid-container">
+					<div class="gfy-gif" ng-repeat="gif in gifs">
+						<a href="{{gif.gifUrl}}" target="_blank">
+							<img src="{{gif.thumb360PosterUrl}}" ng-mouseenter="hideThumbnail = true" ng-class="{ 'hidden' : hideThumbnail }">
+							<video loop ng-mouseenter="playVideo($event)" ng-mouseleave="pauseVideo($event)" ng-click="" ng-class="{ 'hidden' : !hideThumbnail }">
+							  <source src="{{gif.mp4Url | trustUrl}}" type="video/mp4">
+							</video>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
