@@ -20,6 +20,10 @@ GfyCat.controller('GfyController', function ($scope, $http) {
       $event.currentTarget.pause();
    };
 
+   $scope.toggleMobile = function(viewMobile){
+      $scope.viewMobile = viewMobile;
+   };
+
    //Initialization
    $scope.gifs = [];
    $scope.isLoading = true;

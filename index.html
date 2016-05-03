@@ -15,18 +15,24 @@
       </noscript>
 		<div class="app" ng-app="GfyCat">
 			<div class="gfy-controller" ng-controller="GfyController">
-				<div class="vid-container">
-					<div class="gfy-gif" ng-repeat="gif in gifs">
-						<a href="{{gif.gifUrl}}" target="_blank">
-							<img class="gif" src="{{gif.thumb360PosterUrl}}" ng-mouseenter="hideThumbnail = true" ng-class="{ 'hidden' : hideThumbnail }">
-							<video loop ng-mouseenter="playVideo($event)" ng-mouseleave="pauseVideo($event)" ng-click="" ng-class="{ 'hidden' : !hideThumbnail }">
-							  <source src="{{gif.mp4Url | trustUrl}}" type="video/mp4">
-							</video>
-						</a>
-					</div>
+				<div class="view-toggle">
+					<div><a ng-class="{ 'active' : !viewMobile }" ng-click="toggleMobile(false)">Desktop</a></div>
+					<div><a ng-class="{ 'active' :  viewMobile }" ng-click="toggleMobile(true) ">Mobile</a></div>
 				</div>
-				<div ng-class="{ 'hidden' : !isLoading }">
-					<img class="loading" src="loadingCat.gif">
+				<div class="container-wrapper" ng-class="{ 'mobile' : viewMobile }">
+					<div class="vid-container">
+						<div class="gfy-gif" ng-repeat="gif in gifs" ng-class="{ 'mobile' : viewMobile }">
+							<a href="{{gif.gifUrl}}" target="_blank">
+								<img class="gif" src="{{gif.thumb360PosterUrl}}" ng-mouseenter="hideThumbnail = true" ng-class="{ 'hidden' : hideThumbnail }">
+								<video loop ng-mouseenter="playVideo($event)" ng-mouseleave="pauseVideo($event)" ng-class="{ 'hidden' : !hideThumbnail }">
+								  <source src="{{gif.mp4Url | trustUrl}}" type="video/mp4">
+								</video>
+							</a>
+						</div>
+					</div>
+					<div ng-class="{ 'hidden' : !isLoading }">
+						<img class="loading" src="loadingCat.gif">
+					</div>
 				</div>
 			</div>
 		</div>

@@ -1,19 +1,65 @@
 body {
-	padding: 30px;
+	padding-left: 30px;
+	padding-right: 30px;
    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
    background-color: #666;
    box-sizing: border-box;
+   margin-top: 0;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
 }
 
 .app {
 }
 
-.gfy-controller {
+.view-toggle {
+	display: table;
+	table-layout: fixed;
+	width: 250px;
+	height: 40px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #ccd;
+	margin-bottom: 30px;
+}
+
+.view-toggle > div {
+	display: table-cell;
+	height: 100%;
+	vertical-align: bottom;
+}
+
+.view-toggle > div > a {
+	display: block;
+	width: 100px;
+	text-align: center;
+	margin-right: auto;
+	margin-left: auto;
+	padding-bottom: 4px;
+	border-bottom: 4px solid #ccd;
+}
+
+.view-toggle > div > a.active, .view-toggle > div > a:hover {
+	border-bottom: 4px solid #5AD;
+}
+
+.gfy-controller > div.container-wrapper {
 	width: 680px;
 	padding: 10px;
 	margin-left: auto;
 	margin-right: auto;
 	background-color: #ccd;
+}
+
+.gfy-controller > div.container-wrapper.mobile {
+	width: 100%;
+	margin: 0;
+	background-color: inherit;
+	padding-left: 0;
+	padding-right: 0;
 }
 
 .vid-container {
@@ -28,6 +74,19 @@ body {
 	margin: 7px;
 	overflow: hidden;
 	cursor: pointer;
+}
+
+.gfy-gif.mobile {
+	display: block;
+	width: 100%;
+	height: auto;
+	margin-right: 0;
+	margin-left: 0;
+}
+
+.gfy-gif > a {
+	display: block;
+	height: 100%;
 }
 
 video {
